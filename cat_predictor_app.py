@@ -10,7 +10,7 @@ labelsList = ['bedroom', 'dining', 'lounge', 'nicholas', 'outside', 'study', 'wi
 
 @st.cache(allow_output_mutation=True)
 def prepClassification():
-    ret = pickle.load(open('../notebooks/cat_predictor_full_clf.pkl', 'rb'))
+    ret = pickle.load(open('./cat_predictor_app.pkl', 'rb'))
     print("Classification loaded")
     return ret
 
