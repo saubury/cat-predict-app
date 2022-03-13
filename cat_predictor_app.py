@@ -32,12 +32,14 @@ load_image = prepImageData()
 # Main page render
 st.write("""
 # Cat Prediction App!
-This app predicts the probability 
+This app predicts the likely location of Snowy the cat 
+
+Use the sliders and selection boxes to update feature values
 """)
 
 
-IndoorTemp = st.sidebar.slider('Indoor Temp C', 10 , 35, 22)
-OutdoorTemp = st.sidebar.slider('Outdoor Temp C', 10 , 35, 22)
+IndoorTemp = st.sidebar.slider('Indoor Temp C', 16 , 28, 22)
+OutdoorTemp = st.sidebar.slider('Outdoor Temp C', 10 , 30, 22)
 HourOfDay = st.sidebar.slider('Hour of day', 0 , 23, 8)
 DayOfWeek = st.sidebar.selectbox('Day Of Week', daysList)
 IsRaining = st.sidebar.selectbox('Raining',('True', 'False'))
