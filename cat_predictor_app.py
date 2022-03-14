@@ -42,7 +42,7 @@ load_image = prepImageData()
 # Main page render
 st.write("""
 # Cat Prediction App!
-A web-app that predicts the likely location of Snowy the cat - by [Simon Aubury](https://twitter.com/simonaubury)
+A web-app that predicts the likely location of Snowy the cat - *by [Simon Aubury](https://twitter.com/simonaubury)*
 
 Use the sliders and selection boxes to update feature values, such as day and temperature.
 
