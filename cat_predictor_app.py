@@ -8,6 +8,16 @@ from PIL import Image
 daysList = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', ]
 labelsList = ['bedroom', 'dining', 'lounge', 'nicholas', 'outside', 'study', 'winter_garden', ]
 
+# Sidebar
+st.set_page_config(initial_sidebar_state='expanded',)
+
+IndoorTemp = st.sidebar.slider('Indoor Temp C', 16 , 28, 22)
+OutdoorTemp = st.sidebar.slider('Outdoor Temp C', 10 , 30, 22)
+HourOfDay = st.sidebar.slider('Hour of day', 0 , 23, 8)
+DayOfWeek = st.sidebar.selectbox('Day Of Week', daysList)
+IsRaining = st.sidebar.selectbox('Raining',('True', 'False'), 1)
+
+
 @st.cache(allow_output_mutation=True)
 def prepClassification():
     ret = pickle.load(open('./cat_predictor_app.pkl', 'rb'))
@@ -40,11 +50,9 @@ A classification model, trained with 3 months of historic behaviour data, is use
 """)
 
 
-IndoorTemp = st.sidebar.slider('Indoor Temp C', 16 , 28, 22)
-OutdoorTemp = st.sidebar.slider('Outdoor Temp C', 10 , 30, 22)
-HourOfDay = st.sidebar.slider('Hour of day', 0 , 23, 8)
-DayOfWeek = st.sidebar.selectbox('Day Of Week', daysList)
-IsRaining = st.sidebar.selectbox('Raining',('True', 'False'), 1)
+
+
+
 
 
 with st.expander("See explanation"):
